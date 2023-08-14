@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.triviaapp2.screens.QuestionsViewModel
+import com.example.triviaapp2.screens.TriviaHome
 import com.example.triviaapp2.ui.theme.TriviaApp2Theme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.log
@@ -38,24 +39,6 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Composable
-fun TriviaHome(viewModel: QuestionsViewModel= hiltViewModel()){
-    Questions(viewModel)
-    
-}
-
-@Composable
-fun Questions(viewModel: QuestionsViewModel ) {
-    val questions = viewModel.data.value.data?.toMutableList()
-    if(viewModel.data.value.loading == true){
-        Log.d("Loading", "Questions: Loading.....")
-    }else{
-        questions?.forEach{
-            Log.d("Size", "Questions: ${it.question}")
-        }
-    }
-
-}
 
 
 @Preview(showBackground = true)

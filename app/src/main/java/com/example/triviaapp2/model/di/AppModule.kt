@@ -1,4 +1,4 @@
-package com.example.triviaapp2.di
+package com.example.triviaapp2.model.di
 
 import com.example.triviaapp2.network.QuestionApi
 import com.example.triviaapp2.repository.QuestionRepository
